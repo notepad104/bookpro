@@ -1,12 +1,12 @@
 from hashlib import sha256
 from bs4 import BeautifulSoup
 import time, datetime, base64, hmac, requests, urllib, xmltodict, json
-import collections
-
+import collections 
+from config import AmazonConfig
 def amazon(s):
-    access_key_id = 'AKIAJKBJSCFX6V2ODHAA'
-    secret_key = "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"
-    endpoint = "webservices.amazon.in"
+    access_key_id = AmazonConfig.access_key_id
+    secret_key = AmazonConfig.secret_key
+    endpoint = AmazonConfig.endpoint
     uri = "/onca/xml"
     payload = collections.OrderedDict(
     [('AWSAccessKeyId', access_key_id),
